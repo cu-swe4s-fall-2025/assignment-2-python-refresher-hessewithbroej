@@ -1,7 +1,7 @@
 from pathlib import Path
 
 
-def get_column(file_name, query_column, query_value, result_column):
+def get_column(file_name, query_column, query_value, result_column=1):
     """ Reads a .csv file_name, selects all rows where column query_column matches value query_value, returns the value contained in result_column from those rows 
     
     Inputs:
@@ -23,7 +23,7 @@ def get_column(file_name, query_column, query_value, result_column):
         for line in f:
             line_arr = line.split(',')
 
-            # check if value is 
+            # check if value matches user request
             if line_arr[query_column] == query_value:
                 result.append(line_arr[result_column])
 
