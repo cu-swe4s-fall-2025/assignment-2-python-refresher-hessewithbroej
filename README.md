@@ -6,7 +6,7 @@
 function created to enable selection of specified data within a .csv file. Can specify the desired value of a specified query column, then return the value in a different specified result column of all rows who match the query criteria. 
 
 ## print_fires.py
-python script created to print the number of fires in the USA by year, utilizing my_utils.get_column() and provided data
+python script created to print the number of fires, or other specifiable numeric column in the agrofood_co2_emission.csv, in a user-specified country by year, utilizing my_utils.get_column() 
 
 ## run.sh
-bash script created to run print_fires.py 
+bash script created to run print_fires.py correctly, and with two example incorrect usages.
