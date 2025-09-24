@@ -1,5 +1,6 @@
 from pathlib import Path
 import sys
+import numpy as np
 
 
 def get_column(file_name, query_column, query_value, result_column=1):
@@ -55,9 +56,73 @@ def get_column(file_name, query_column, query_value, result_column=1):
     return result
 
 
+def calc_mean(arr):
+    """ Calculates mean of an array
+
+    Inputs:
+    - arr <array>: array of elements from which to compute mean
+
+    Outputs:
+    - result <float>: mean of supplied array
+    """
+    if len(arr)>0:
+        return np.mean(arr)
+    else:
+        raise ArithmeticError("Attempted to calculate mean of empty array")
+    
+
+def calc_median(arr):
+    """ Calculates median of an array
+
+    Inputs:
+    - arr <array>: array of elements from which to compute median
+
+    Outputs:
+    - result <float>: median of supplied array
+    """
+    if len(arr)>0:
+        return np.median(arr)
+    else:
+        raise ArithmeticError("Attempted to calculate median of empty array")
+    
+def calc_median(arr):
+    """ Calculates median of an array
+
+    Inputs:
+    - arr <array>: array of elements from which to compute median
+
+    Outputs:
+    - result <float>: median of supplied array
+    """
+    if len(arr)>0:
+        return np.median(arr)
+    else:
+        print("Warning: Attempted to calculate median of empty array")
+        return None
+
+
+def calc_stdev(arr):
+    """ Calculates standard deviation of an array
+
+    Inputs:
+    - arr <array>: array of elements from which to compute stdev
+
+    Outputs:
+    - result <float>: median of supplied array
+    """
+    if len(arr)>1:
+        return np.median(arr)
+    else:
+        print("Warning: Attempted to calculate standard deviation of an array with less than 2 elements")
+        return None
+
+
 def main():
     print(get_column('Agrofood_co2_emission.csv', 0,
                      'Zimbabwe', result_column=1))
+    print(calc_mean([1,1,1,2,4,4]))
+    print(calc_median([1,1,1,2,4,4]))
+    print(calc_stdev([1,1,1,2,4,4]))
 
 
 if __name__ == '__main__':
