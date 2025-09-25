@@ -65,11 +65,11 @@ def calc_mean(arr):
     Outputs:
     - result <float>: mean of supplied array
     """
-    if len(arr)>0:
+    if len(arr) > 0:
         return np.mean(arr)
     else:
         raise ArithmeticError("Attempted to calculate mean of empty array")
-    
+
 
 def calc_median(arr):
     """ Calculates median of an array
@@ -80,21 +80,7 @@ def calc_median(arr):
     Outputs:
     - result <float>: median of supplied array
     """
-    if len(arr)>0:
-        return np.median(arr)
-    else:
-        raise ArithmeticError("Attempted to calculate median of empty array")
-    
-def calc_median(arr):
-    """ Calculates median of an array
-
-    Inputs:
-    - arr <array>: array of elements from which to compute median
-
-    Outputs:
-    - result <float>: median of supplied array
-    """
-    if len(arr)>0:
+    if len(arr) > 0:
         return np.median(arr)
     else:
         raise ArithmeticError("Attempted to calculate median of empty array")
@@ -109,19 +95,21 @@ def calc_stdev(arr):
     Outputs:
     - result <float>: median of supplied array
     """
-    if len(arr)>1:
+    if len(arr) > 1:
         return np.std(arr)
     else:
-        raise ArithmeticError("Attempted to calculate stdev of array with less than 2 elements")
-
+        raise ArithmeticError("Attempted to calculate stdev of array with less"
+                              " than 2 elements")
 
 
 def main():
-    print(type(get_column('./Assignments/assignment-2-python-refresher-hessewithbroej/Agrofood_co2_emission.csv', 0,
-                     'Zimbabwe', result_column=1)))
-    print(calc_mean([1,1,1,2,4,4]))
-    print(calc_median([1,1,1,2,4,4]))
-    print(calc_stdev([1,2,3]))
+    print(type(get_column('./Assignments/'
+                          'assignment-2-python-refresher-hessewithbroej/'
+                          'Agrofood_co2_emission.csv',
+                          0, 'Zimbabwe', result_column=1)))
+    print(calc_mean([1, 1, 1, 2, 4, 4]))
+    print(calc_median([1, 1, 1, 2, 4, 4]))
+    print(calc_stdev([1, 2, 3]))
 
 
 if __name__ == '__main__':
