@@ -97,8 +97,7 @@ def calc_median(arr):
     if len(arr)>0:
         return np.median(arr)
     else:
-        print("Warning: Attempted to calculate median of empty array")
-        return None
+        raise ArithmeticError("Attempted to calculate median of empty array")
 
 
 def calc_stdev(arr):
@@ -111,18 +110,18 @@ def calc_stdev(arr):
     - result <float>: median of supplied array
     """
     if len(arr)>1:
-        return np.median(arr)
+        return np.std(arr)
     else:
-        print("Warning: Attempted to calculate standard deviation of an array with less than 2 elements")
-        return None
+        raise ArithmeticError("Attempted to calculate stdev of array with less than 2 elements")
+
 
 
 def main():
-    print(get_column('Agrofood_co2_emission.csv', 0,
-                     'Zimbabwe', result_column=1))
+    print(type(get_column('./Assignments/assignment-2-python-refresher-hessewithbroej/Agrofood_co2_emission.csv', 0,
+                     'Zimbabwe', result_column=1)))
     print(calc_mean([1,1,1,2,4,4]))
     print(calc_median([1,1,1,2,4,4]))
-    print(calc_stdev([1,1,1,2,4,4]))
+    print(calc_stdev([1,2,3]))
 
 
 if __name__ == '__main__':
