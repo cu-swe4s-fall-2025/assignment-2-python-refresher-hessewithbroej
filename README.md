@@ -2,8 +2,10 @@
 # python-refresher
 
 ## my_utils.py
+Unit tests added for all functions in my_utils.py
+
 ### get_column(file_name, query_column, query_value, result_column) 
-function created to enable selection of specified data within a .csv file. Can specify the desired value of a specified query column, then return the value in a different specified result column of all rows who match the query criteria. 
+function created to enable selection of specified data within a .csv file. Can specify the desired value of a specified query column, then return the value in a different specified result column of all rows who match the query criteria.
 
 Example usage:
 `get_column('Agrofood_co2_emission.csv', 0,'Zimbabwe', result_column=1)`
@@ -29,6 +31,9 @@ Example usage:
 
 ## print_fires.py
 python script created to print the number of fires, or other specifiable numeric column in the agrofood_co2_emission.csv, in a user-specified country by year, utilizing my_utils.get_column() 
+Functional test using ssshtest framework added
 
 ## run.sh
 bash script created to run print_fires.py correctly, and with two example incorrect usages.
+
+

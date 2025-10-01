@@ -10,7 +10,9 @@ parser = argparse.ArgumentParser(
 parser.add_argument('--file_name',
                     type=str,
                     help='Name or path to .csv file',
-                    default='Agrofood_co2_emission.csv')
+                    default='Assignments/'
+                            'assignment-2-python-refresher-hessewithbroej/'
+                            'Agrofood_co2_emission.csv')
 
 parser.add_argument('--country',
                     type=str,
@@ -29,9 +31,22 @@ parser.add_argument('--fires_column',
                              data""",
                     default=3)
 
+parser.add_argument('--operation',
+                    type=str,
+                    help="""Operation to perform on selected data""",
+                    required=False)
+
 args = parser.parse_args()
 
 # select the specified data & print it
 fires = my_utils.get_column(args.file_name, args.country_column,
                             args.country, result_column=args.fires_column)
-print(fires)
+
+if args.operation == 'mean':
+    print(my_utils.calc_mean(fires))
+elif args.operation == 'median':
+    print(my_utils.calc_median(fires))
+elif args.operation == 'stdev':
+    print(my_utils.calc_stdev(fires))
+else:
+    print(fires)
