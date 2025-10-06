@@ -10,17 +10,17 @@ jobs:
     runs-on: ubuntu-latest 
     steps: 
         - uses: actions/checkout@v4
-        - run: |
-            python test/test_my_utils.py
-  run_func_test:
-    runs-on: ubuntu-latest 
-    steps: 
-        - uses: actions/checkout@v4
         - uses: mamba-org/setup-micromamba@v2
           with: 
             environment-file: environment.yml
             init-shell: bash
+        - run: python test/test_my_utils.py
+  run_func_test:
+    runs-on: ubuntu-latest 
+    steps: 
+        - uses: actions/checkout@v4
         - run: bash test/test_print_fires.sh
+          shell: bash -l {0}
   run_style_check:
     runs-on: ubuntu-latest
     steps:
