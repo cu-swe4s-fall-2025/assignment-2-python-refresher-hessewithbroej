@@ -15,9 +15,13 @@ jobs:
             environment-file: environment.yml
             init-shell: bash
         - run: |
+            echo "Test"
             eval "$(micromamba shell hook --shell bash)"
+            echo "Post eval"
             micromamba activate swe4s
+            echo "Post activate"
             python test/test_my_utils.py
+            echo "Done"
   run_func_test:
     runs-on: ubuntu-latest 
     steps: 
