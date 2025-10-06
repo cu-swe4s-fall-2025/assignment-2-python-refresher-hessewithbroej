@@ -2,7 +2,7 @@
 # python-refresher
 
 ## my_utils.py
-Unit tests added for all functions in my_utils.py
+Unit tests added for all functions in my_utils.py. Functional tests added for fire data selection. Continuous integration added that runs unit, functional, and style tests on push & pull requests into main.
 
 ### get_column(file_name, query_column, query_value, result_column) 
 function created to enable selection of specified data within a .csv file. Can specify the desired value of a specified query column, then return the value in a different specified result column of all rows who match the query criteria.
