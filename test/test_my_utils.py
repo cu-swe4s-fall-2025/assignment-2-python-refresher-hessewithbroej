@@ -3,8 +3,8 @@ import sys
 import random
 import numpy as np
 
-sys.path.append('./Assignments/assignment-2-python-refresher-hessewithbroej/src')  # noqa
-sys.path.append('./Assignments/assignment-2-python-refresher-hessewithbroej/test')  # noqa
+sys.path.append('src')  # noqa
+sys.path.append('test')  # noqa
 
 import my_utils
 
