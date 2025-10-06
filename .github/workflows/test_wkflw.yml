@@ -16,8 +16,11 @@ jobs:
     runs-on: ubuntu-latest 
     steps: 
         - uses: actions/checkout@v4
-        - run: |
-            bash test/test_print_fires.sh
+        - uses: mamba-org/setup-micromamba@v2
+          with: 
+            environment-file: environment.yml
+            init-shell: bash
+        - run: bash test/test_print_fires.sh
   run_style_check:
     runs-on: ubuntu-latest
     steps:
