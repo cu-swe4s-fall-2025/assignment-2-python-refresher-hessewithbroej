@@ -14,7 +14,9 @@ jobs:
           with: 
             environment-file: environment.yml
             init-shell: bash
-        - run: python test/test_my_utils.py
+        - run: 
+            micromamba activate swe4s
+            python test/test_my_utils.py
   run_func_test:
     runs-on: ubuntu-latest 
     steps: 
