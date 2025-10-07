@@ -15,11 +15,13 @@ jobs:
             environment-file: environment.yml
             init-shell: bash
         - run: |
-            echo "Test"
+            echo "hooking"
             eval "$(micromamba shell hook --shell bash)"
             echo "Post eval"
             micromamba activate swe4s
             echo "Post activate"
+            curl -L "https://docs.google.com/uc?export=download&id=1Wytf3ryf9EtOwaloms8HEzLG0yjtRqxr" -o Agrofood_co2_emission.csv
+            echo "Post file download"
             python test/test_my_utils.py
             echo "Done"
   run_func_test:
