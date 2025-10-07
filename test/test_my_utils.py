@@ -3,17 +3,17 @@ import sys
 import random
 import numpy as np
 
-sys.path.append('./Assignments/assignment-2-python-refresher-hessewithbroej/src')  # noqa
-sys.path.append('./Assignments/assignment-2-python-refresher-hessewithbroej/test')  # noqa
+sys.path.append('src')  # noqa
+sys.path.append('test')  # noqa
 
 import my_utils
 
 
 class TestMyUtils(unittest.TestCase):
     def test_get_column(self):
+        print("Testing mssg")
         # test return type
         self.assertIsInstance(my_utils.get_column(
-            './Assignments/assignment-2-python-refresher-hessewithbroej/'
             'Agrofood_co2_emission.csv', 0, 'Zimbabwe', result_column=1), list)
 
     # calc_mean tests
@@ -87,3 +87,7 @@ class TestMyUtils(unittest.TestCase):
                 self.assertTrue(my_utils.calc_stdev(arr) == 0)
             else:
                 self.assertTrue(my_utils.calc_stdev(arr) > 0)
+
+
+if __name__ == "__main__":
+    unittest.main()
