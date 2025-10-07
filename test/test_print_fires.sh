@@ -1,3 +1,5 @@
+cd test
+
 test -e ssshtest || curl -q https://raw.githubusercontent.com/ryanlayer/ssshtest/master/ssshtest
 . ssshtest
 
@@ -9,3 +11,5 @@ assert_exit_code 0
 run test_print_fires1 python Assignments/assignment-2-python-refresher-hessewithbroej/src/print_fires.py --country FAKECOUNTRY --fires_column 3 --file_name Assignments/assignment-2-python-refresher-hessewithbroej/test/TestAgrofood.csv
 assert_in_stdout 
 assert_exit_code 0
+
+cd ..
