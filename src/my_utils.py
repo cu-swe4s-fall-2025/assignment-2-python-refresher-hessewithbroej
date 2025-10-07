@@ -103,9 +103,7 @@ def calc_stdev(arr):
 
 
 def main():
-    print(type(get_column('./Assignments/'
-                          'assignment-2-python-refresher-hessewithbroej/'
-                          'Agrofood_co2_emission.csv',
+    print(type(get_column('Agrofood_co2_emission.csv',
                           0, 'Zimbabwe', result_column=1)))
     print(calc_mean([1, 1, 1, 2, 4, 4]))
     print(calc_median([1, 1, 1, 2, 4, 4]))
